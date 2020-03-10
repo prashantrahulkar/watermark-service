@@ -15,6 +15,14 @@ describe('POST /watermarking', function() {
     .end(function(err, res) {
       if (err) return done(err);
       ticketId = res.text;
+      console.log("Document Watermarking Ticket ID {}",ticketId)
+      console.log()
+      console.log(" *********** Check the status of ticket ***********")
+      console.log("http://localhost:3600/watermarking-status/"+ticketId);
+      console.log()
+      console.log(" *********** Get the document of ticket ***********")
+      console.log("http://localhost:3600/watermarked-document/"+ticketId);
+
       done();
     });
   });
