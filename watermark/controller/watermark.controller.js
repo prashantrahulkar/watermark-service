@@ -19,9 +19,6 @@ class WaterMarkController {
   }
 
   waterMartkingStatus(req,res) {
-    console.log("WaterMarking  Status..")
-    console.log("Ticket Id"+ req.params.id)
-    console.log(ticketDocumentMapping.get(req.params.id))
     let documentObjectByTicketId  = ticketDocumentMapping.get(req.params.id)
     let response = ( documentObjectByTicketId!= undefined ? documentObjectByTicketId.status :"Invalid Ticket Id : {"+req.params.id+"}")
     res.send(response); 

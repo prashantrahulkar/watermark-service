@@ -14,3 +14,5 @@ waterMarkRoutes.routeConfig(app);
 app.listen(config.port, () => {
   console.log('Server listening on port %s...',config.port);
 });
+
+module.exports = app
