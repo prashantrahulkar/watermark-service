@@ -1,0 +1,12 @@
+************************************************
+Project Name : WaterMarking Web Servics
+Author : PrashantR
+Date : 10.03.2020
+************************************************
+Run applicaiton : 
+  npm start
+
+Test the application : 
+  npm test
+
+
