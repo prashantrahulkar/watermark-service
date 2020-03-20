@@ -1,0 +1,17 @@
+{
+  "name": "com.water-marking.service",
+  "version": "0.0.1",
+  "description": "WaterMarking Services",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PrashantR",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "uuid": "^7.0.2"
+  }
+}
