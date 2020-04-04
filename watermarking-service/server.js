@@ -6,9 +6,13 @@ const bodyParser = require('body-parser')
 const app = express();
 app.use(bodyParser.json())
 
-app.get('/', (req, res) => {
+app.get('/welcome', (req, res) => {
   res.send('Welcome to WaterMark Service Enginer !');
 });
+
+app.post('',(req,res)=> {
+});
+
 waterMarkRoutes.routeConfig(app);
 
 app.listen(config.port, () => {

@@ -1,6 +1,7 @@
 FROM node:8
 
 # Create app directory
+RUN mkdir /usr/src/watermarking-app
 WORKDIR /usr/src/watermarking-app
 
 # Install app dependencies
@@ -15,6 +16,6 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 3600
+EXPOSE 3000
 CMD [ "npm", "start" ]
 

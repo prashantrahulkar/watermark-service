@@ -1,5 +1,5 @@
 module.exports = {
-    "port": 3600,
+    "port": process.env.PORT || 3000,
     "apiEndpoint": "http://localhost:3600",
     "environment": "dev", 
 };
