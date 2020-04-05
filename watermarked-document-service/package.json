@@ -1,0 +1,18 @@
+{
+  "name": "watermarked-services",
+  "version": "1.0.0",
+  "description": "To get the watermearked services object",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prashant R.",
+  "license": "ISC",
+  "dependencies": {
+    "cloudevents-sdk": "^1.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "request": "^2.88.2"
+  }
+}
