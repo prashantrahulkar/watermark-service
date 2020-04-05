@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const config = require('./common/config')
 const waterMarkRoutes = require('./main.routes')
@@ -7,7 +9,7 @@ const app = express();
 app.use(bodyParser.json())
 
 app.get('/welcome', (req, res) => {
-  res.send('Welcome to WaterMark Service Enginer !');
+  res.send('Welcome to WaterMark Service Engine !!!!');
 });
 
 app.post('',(req,res)=> {
