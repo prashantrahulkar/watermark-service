@@ -1,0 +1,17 @@
+apiVersion: eventing.knative.dev/v1alpha1
+kind: Trigger
+metadata:
+  name: watermarking-services-triggers
+spec:
+  filter:
+    attributes:
+      type: watermarking
+  subscriber:
+    ref:
+     apiVersion: v1
+     kind: Service
+     name: watermarking-status-service
+    ref:
+     apiVersion: v1
+     kind: Service
+     name: watermarked-document-service

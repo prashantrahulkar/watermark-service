@@ -3,7 +3,7 @@ const config = require('./../common/config');
 
 var options = {
   hostname: config.broker,
-  port: 4000,
+  port: 80,
   path: '/',
   method: 'POST',
   headers: {
@@ -25,14 +25,14 @@ class PublishWaterMarkingData{
     })
     options = {
       hostname: config.broker,
-      port: 4000,
+      port: 80,
       path: '',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Content-Length': data.length,
-        'Ce-Type': 'greeting',
-        'Ce-Id': 'say-hello',
+        'Ce-Type': 'watermarking',
+        'Ce-Id': 'watermarking-service',
         'Ce-Specversion': '0.3',
         'Ce-Source': 'not-sendoff'
       }

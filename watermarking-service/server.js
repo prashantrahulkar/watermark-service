@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const express = require('express');
 const config = require('./common/config')
 const waterMarkRoutes = require('./main.routes')
