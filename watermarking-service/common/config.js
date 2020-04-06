@@ -4,4 +4,3 @@ module.exports = {
     "apiEndpoint": "http://localhost:3600",
     "environment": "dev", 
 };
- 

@@ -3,7 +3,7 @@ const config = require('./../common/config');
 
 var options = {
   hostname: config.broker,
-  port: 80,
+  port: 4000,
   path: '/',
   method: 'POST',
   headers: {
@@ -18,6 +18,7 @@ class PublishWaterMarkingData{
   }
 
   publish(id, object){
+    
     console.log("Object id :::::::::"+JSON.stringify(object.get(id)));
     const data = JSON.stringify({
       'id': id,
@@ -25,14 +26,14 @@ class PublishWaterMarkingData{
     })
     options = {
       hostname: config.broker,
-      port: 80,
+      port: 4000,
       path: '',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Content-Length': data.length,
-        'Ce-Type': 'watermarking',
-        'Ce-Id': 'watermarking-service',
+        'Ce-Type': 'greeting',
+        'Ce-Id': 'say-hello',
         'Ce-Specversion': '0.3',
         'Ce-Source': 'not-sendoff'
       }
@@ -54,6 +55,39 @@ class PublishWaterMarkingData{
   
   this.req.write(data)
   this.req.end()
+
+  if(object.get(id).status == "Compelted") {
+    options = {
+      hostname: config.broker,
+      port: 5000,
+      path: '',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': data.length,
+        'Ce-Type': 'watermarked-doc',
+        'Ce-Id': 'wateramarked-document-service',
+        'Ce-Specversion': '0.3',
+        'Ce-Source': 'wateramarking'
+      }
+    }
+ 
+ // options.data = object
+  this.req = http.request(options, res => {
+    console.log(`statusCode: ${res.statusCode}`)
+  
+    res.on('data', d => {
+      process.stdout.write(d)
+    })
+  })
+  
+  this.req.on('error', error => {
+    console.error(error)
+  })
+  
+  this.req.write(data)
+  this.req.end()
+  }
 }
 }
 module.exports = PublishWaterMarkingData

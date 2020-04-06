@@ -31,7 +31,7 @@ app.post('',(req,res)=>{
     //console.log(JSON.stringify(cloudevent.format(), null, 2));
     var response = JSON.parse(JSON.stringify(cloudevent.format(), null, 2));
    
-   watermakredDocumentList.set(response.data.id,response.data.watermarking);
+    watermakredDocumentList.set(response.data.id,response.data.watermarking);
    res.status(201)
           .json(cloudevent.format());
   })
